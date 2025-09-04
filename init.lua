@@ -1028,7 +1028,8 @@ vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit" })
 vim.keymap.set("n", "<leader>gp", ":G push<CR>", { desc = "Git push" })
 vim.keymap.set("n", "<leader>gl", ":G log<CR>", { desc = "Git log" })
 
-
+-- Netrw keymaps
+vim.keymap.set("n", "<leader>pv", ":Ex <CR>", { desc = "Open Netrw" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
