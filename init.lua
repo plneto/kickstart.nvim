@@ -1012,5 +1012,22 @@ require('lazy').setup({
   },
 })
 
+
+-- Toggle filesystem tree on the left
+vim.keymap.set('n', '<leader>e', ':Neotree filesystem toggle left<CR>', { silent = true, noremap = true })
+
+-- Reveal current file in tree
+vim.keymap.set('n', '<leader>o', ':Neotree reveal<CR>', { silent = true, noremap = true })
+
+-- Toggle buffers view
+vim.keymap.set('n', '<leader>b', ':Neotree buffers toggle left<CR>', { silent = true, noremap = true })
+
+-- Toggle git status view
+vim.keymap.set('n', '<leader>g', ':Neotree git_status toggle left<CR>', { silent = true, noremap = true })
+
+vim.keymap.set('n', '<leader>t', ':CopilotChatToggle<CR>', { silent = true, noremap = true, desc = 'Toggle Copilot Chat' })
+
+
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
