@@ -1013,19 +1013,20 @@ require('lazy').setup({
 })
 
 
--- Toggle filesystem tree on the left
+-- Neotree keymaps
 vim.keymap.set('n', '<leader>e', ':Neotree filesystem toggle left<CR>', { silent = true, noremap = true })
-
--- Reveal current file in tree
 vim.keymap.set('n', '<leader>o', ':Neotree reveal<CR>', { silent = true, noremap = true })
-
--- Toggle buffers view
 vim.keymap.set('n', '<leader>b', ':Neotree buffers toggle left<CR>', { silent = true, noremap = true })
-
--- Toggle git status view
 vim.keymap.set('n', '<leader>g', ':Neotree git_status toggle left<CR>', { silent = true, noremap = true })
 
+-- Copilot Chat keymaps
 vim.keymap.set('n', '<leader>t', ':CopilotChatToggle<CR>', { silent = true, noremap = true, desc = 'Toggle Copilot Chat' })
+
+-- Fugitive keymaps
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git status" })
+vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gp", ":G push<CR>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gl", ":G log<CR>", { desc = "Git log" })
 
 
 
