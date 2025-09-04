@@ -1037,20 +1037,14 @@ local opts = { noremap = true, silent = true }
 -- Normal mode
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
-vim.keymap.set("n", "<C-j>", ":m .+1<CR>==", opts) -- fallback
-vim.keymap.set("n", "<C-k>", ":m .-2<CR>==", opts) -- fallback
 
 -- Insert mode
 vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-vim.keymap.set("i", "<C-j>", "<Esc>:m .+1<CR>==gi", opts) -- fallback
-vim.keymap.set("i", "<C-k>", "<Esc>:m .-2<CR>==gi", opts) -- fallback
 
 -- Visual mode
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
-vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", opts) -- fallback
-vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", opts) -- fallback
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
