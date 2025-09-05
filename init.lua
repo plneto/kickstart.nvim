@@ -1022,6 +1022,16 @@ vim.keymap.set('n', '<leader>g', ':Neotree git_status toggle left<CR>', { silent
 -- Copilot Chat keymaps
 vim.keymap.set('n', '<leader>t', ':CopilotChatToggle<CR>', { silent = true, noremap = true, desc = 'Toggle Copilot Chat' })
 
+-- Quick chat keybinding with the current buffer
+vim.keymap.set('n', '<leader>ccq', function()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, {
+      selection = require("CopilotChat.select").buffer
+    })
+  end
+end, { desc = "CopilotChat - Quick chat" })
+
 -- Fugitive keymaps
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git status" })
 vim.keymap.set("n", "<leader>gc", ":G commit<CR>", { desc = "Git commit" })
