@@ -459,6 +459,24 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Search files tracked by Git
+      vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = "[F]ind [G]it files" })
+      
+      -- Live grep only in Git-tracked files
+      vim.keymap.set('n', '<leader>gg', function()
+        -- get the list of tracked files
+        local git_files = vim.fn.systemlist("git ls-files")
+        if vim.v.shell_error ~= 0 then
+          print("Not a git repo")
+          return
+        end
+      
+        builtin.live_grep({
+          search_dirs = git_files,  -- restrict grep to tracked files
+          cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1], -- repo root
+        })
+      end, { desc = "[G]rep [G]it files" })
     end,
   },
 
